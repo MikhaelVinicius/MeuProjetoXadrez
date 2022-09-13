@@ -1,4 +1,4 @@
-public class position {
+public class Position {
     private int row;
     private int column;
 
