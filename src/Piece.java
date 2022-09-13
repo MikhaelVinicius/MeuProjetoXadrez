@@ -1,6 +1,7 @@
 public class Piece {
 
     protected Position position;
+    private Board board;
 
     public boolean possibleMoves(){
        boolean[][] possibleMoves = new boolean[position.getRow()][position.getColumn()];
