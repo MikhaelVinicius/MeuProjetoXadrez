@@ -3,7 +3,7 @@ public class ChessPiece {
     private int moveCount;
 
     public ChessPosition getChessPosition(){
-
+        /* ???? */
     }
 
     protected boolean isThereOpponentPiece(Position position){

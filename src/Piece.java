@@ -5,7 +5,7 @@ public class Piece {
 
     public boolean possibleMoves(){
        boolean[][] possibleMoves = new boolean[position.getRow()][position.getColumn()];
-
+        /* ???? */
         return false;}
 
     public boolean possibleMove(Position position){
