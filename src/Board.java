@@ -9,7 +9,26 @@ public class Board {
     }
 
     public Position piece(Position position){
-        return
+        return piece(position);
+    }
+
+    public void  placePiece(Piece piece, Position position){
+        return;
+
+    }
+
+    public Piece removePiece(Position position){
+        return removePiece(position);
+    }
+
+    public boolean positionExists(Position position){
+        return true;
+    }
+
+    public boolean thereIsAPiece(Position position){
+        return true;
+
+
     }
 
 

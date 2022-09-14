@@ -1,6 +1,6 @@
 public class BoardException {
 
-    public BoardException(String msg){
+    public void BoardException(String msg){
         return;
 
     }
