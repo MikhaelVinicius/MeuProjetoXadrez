@@ -14,7 +14,7 @@ public class ChessPiece {
 
     }
     protected void  descraeseMoveCount(){
-        
+
     }
 
 }
