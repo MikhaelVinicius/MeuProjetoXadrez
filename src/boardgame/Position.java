@@ -1,5 +1,13 @@
+package boardgame;
+
 public class Position {
     private int row;
+
+    public Position(int row, int column) {
+        this.column = column;
+        this.row = row;
+    }
+
     private int column;
 
     public int getColumn() {

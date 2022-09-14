@@ -1,3 +1,7 @@
+package boardgame;
+
+import boardgame.Board;
+
 public class Piece {
 
     protected Position position;
@@ -13,6 +17,14 @@ public class Piece {
 
     public boolean isThereAnyPossibleMove(){
         return false;
+    }
+
+    protected Board getBoard() {
+        return board;
+    }
+
+    public Piece(Board board){
+        this.board = board;
     }
 
 }
