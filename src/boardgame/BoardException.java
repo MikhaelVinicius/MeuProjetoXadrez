@@ -1,9 +1,10 @@
 package boardgame;
 
-public class BoardException {
+public class BoardException  extends RuntimeException{
+    private static final long serialVersionUID = 1L;
 
-    public void BoardException(String msg){
-        return;
+    public BoardException(String msg){
+        super(msg);
 
     }
 

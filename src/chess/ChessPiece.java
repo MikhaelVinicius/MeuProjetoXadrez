@@ -20,6 +20,7 @@ public class ChessPiece extends Piece {
     }
 
     public ChessPosition getChessPosition(){
+        return getChessPosition();
         /* ???? */
     }
 
