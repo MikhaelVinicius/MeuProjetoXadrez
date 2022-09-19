@@ -54,8 +54,22 @@ public class ChessMatch {
     }
 
     private void inicialSetup(){
-        placeNewPiece('c', 6, new Rook(board,Color.White));
-        board.placePiece(new King(board,Color.Black), new Position(2, 1));
+        placeNewPiece('b', 6, new Rook(board, Color.WHITE));
+        placeNewPiece('e', 8, new King(board, Color.BLACK));
+        placeNewPiece('e', 1, new King(board, Color.WHITE));
+        placeNewPiece('c', 1, new Rook(board, Color.WHITE));
+        placeNewPiece('c', 2, new Rook(board, Color.WHITE));
+        placeNewPiece('d', 2, new Rook(board, Color.WHITE));
+        placeNewPiece('e', 2, new Rook(board, Color.WHITE));
+        placeNewPiece('e', 1, new Rook(board, Color.WHITE));
+        placeNewPiece('d', 1, new King(board, Color.WHITE));
+
+        placeNewPiece('c', 7, new Rook(board, Color.BLACK));
+        placeNewPiece('c', 8, new Rook(board, Color.BLACK));
+        placeNewPiece('d', 7, new Rook(board, Color.BLACK));
+        placeNewPiece('e', 7, new Rook(board, Color.BLACK));
+        placeNewPiece('e', 8, new Rook(board, Color.BLACK));
+        placeNewPiece('d', 8, new King(board, Color.BLACK));
 
     }
 
@@ -93,6 +107,12 @@ public class ChessMatch {
         board.placePiece(p,target);
         return capturada;
 
+    }
+
+    public boolean[][] possibleMoves(ChessPosition sourcePosition){
+        Position position = sourcePosition.toPosition();
+        validar(position);
+        return board.piece(position).possibleMoves();
     }
 
 
