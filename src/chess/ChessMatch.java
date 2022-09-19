@@ -74,10 +74,17 @@ public class ChessMatch {
 
 
         }
+
+        if(!board.piece(position).isThereAnyPossibleMove()){
+            throw new ChessExpetion("There is nom possibles moves for the chosen piece");
+        }
     }
     private Piece makeMove(Position source, Position target){
         Piece p = board.removePiece(source);
         Piece capturada = board.removePiece(target);
+        board.placePiece(p,target);
+        return capturada;
+
     }
 
 
