@@ -9,4 +9,9 @@ public class Quenn extends ChessPiece{
     @Override
     public String  toString(){
         return "Q";}
+
+    @Override
+    public boolean[][] possibleMoves() {
+        return new boolean[0][];
+    }
 }
