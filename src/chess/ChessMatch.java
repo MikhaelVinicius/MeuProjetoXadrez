@@ -16,7 +16,16 @@ public class ChessMatch {
 
     public ChessMatch() {
         board = new Board(8,8);
+        turn = 1;
+        currentPlayer = Color.WHITE;
         inicialSetup();
+    }
+
+    public int getTurn(){
+        return turn;
+    }
+    public Color getCurrentPlayer(){
+        return currentPlayer;
     }
 
     public ChessPiece[][] getPiece(){
@@ -30,7 +39,7 @@ public class ChessMatch {
         return mat;
     }
 
-    public ChessPiece getPieces(){
+    public ChessPiece[][] getPieces(){
 
         return getPieces();
 
@@ -79,6 +88,7 @@ public class ChessMatch {
         validar(source);
         validaTarget(source,target);
         Piece capturePiece = makeMove(source, target);
+        nextTurn();
         return (ChessPiece)capturePiece;
 
     }
@@ -96,10 +106,16 @@ public class ChessMatch {
 
 
         }
+        if(currentPlayer != ((ChessPiece)board.piece(position)).getColor()){
+            throw new ChessExpetion("A peça escolhida não é sua.");
+        }
+
 
         if(!board.piece(position).isThereAnyPossibleMove()){
             throw new ChessExpetion("There is nom possibles moves for the chosen piece");
         }
+
+
     }
     private Piece makeMove(Position source, Position target){
         Piece p = board.removePiece(source);
@@ -113,6 +129,11 @@ public class ChessMatch {
         Position position = sourcePosition.toPosition();
         validar(position);
         return board.piece(position).possibleMoves();
+    }
+
+    private void nextTurn(){
+        turn++;
+        currentPlayer = (currentPlayer == Color.WHITE) ? Color.BLACK : Color.WHITE;
     }
 
 
